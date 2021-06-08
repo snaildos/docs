@@ -1,2 +1,2 @@
 # docs
-Documentation for SnailDOS.com features
+Documentation for SnailDOS.com Services
