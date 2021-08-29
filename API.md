@@ -2,7 +2,7 @@
 title: Official API for SnailDOS
 description: Full API regarding SnailDOS
 published: true
-date: 2021-08-29T15:03:26.921Z
+date: 2021-08-29T15:06:29.450Z
 tags: development
 editor: markdown
 dateCreated: 2021-08-28T14:45:09.110Z
@@ -11,6 +11,12 @@ dateCreated: 2021-08-28T14:45:09.110Z
 # Official Docs
 Welcome to the docs!
 =========================
+
+v0.0.3
+Official Docs all rights reserved under SnailDOS
+
+Endpoint is available at https://api.snaildos.com
+
 ------------------------------------------
 00-responses
 ------------------------------
