@@ -2,7 +2,7 @@
 title: Official API for SnailDOS
 description: Full API regarding SnailDOS
 published: true
-date: 2021-08-28T14:45:09.110Z
+date: 2021-08-29T15:03:26.921Z
 tags: development
 editor: markdown
 dateCreated: 2021-08-28T14:45:09.110Z
@@ -157,7 +157,7 @@ Some parts of the documentation may include status codes explaining the issues r
   - This response signifies that the requested endpoint or method cannot be processed as the appropriate action was not found.
   
 ------------------------------------------
-01-responses
+01-identification
 ------------------------------
 # Identification
 
@@ -170,3 +170,274 @@ The server could respond with the following errors if the validation of the `aut
 - **403**: The user that owns the provided token does not have the proper scopes (permissions) to execute this action.
 
 - **401**: The user has failed the header validation
+
+------------------------------------------
+
+02-applications
+
+------------------------------
+# Applications
+
+- ## Applications are a preview feature at the moment.
+
+### Get application: applications.getApplication GET /applications/:application_id (200 OK)
+
+- _This endpoint allows you to access public information of an application_
+
+  ```jsonc
+  {
+    "status": true,
+    "application": {
+      "id": "string",
+      "callback_urls": "string[]",
+      "image": "string",
+      "name": "string"
+    }
+  }
+  ```
+  ------------------------------------------
+
+03-radio
+
+------------------------------
+
+# Radio
+
+- ## Radio is a simple API that provides what currently is playing
+
+### Get currently playing: radio.getCurrent GET /radio/create (200 OK)
+
+- _This endpoint allows you to access public information of what the radio is currently playing_
+
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "playing": "string | null"
+
+  }
+
+  ```
+
+  ------------------------------------------
+
+04-users
+
+------------------------------
+
+# Users
+
+- ## Users endpoints are the main feature of snail portal, it allows creating new users, updating them and / or deleting them.
+
+### Create a new user: users.createUser POST /users/create (201 Created)
+
+- _This endpoint allows the client to create a new user_
+
+- To perform this action a body with the following schema is required:
+
+  ```jsonc
+
+  {
+
+    "email": "string", //Should be of an email format
+
+    "name": "string",
+
+    "pass": "string", //Should be longer or equal 15 characters in length and smaller than or equal to 300 characters in length,
+
+    "captcha": "string" //Should be a valid hcaptcha response token
+
+  }
+
+  ```
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "token": "string"
+
+  }
+
+  ```
+
+  - This is the first step to creating a new user, the returned token should be used to validate user with the code received by email
+
+### Validate the new created user: users.validateUser POST /users/validate (200 OK)
+
+- To perform this action a body with the following schema is required:
+
+  ```jsonc
+
+  {
+
+    "verificationCode": "string" //Should be the code received by email from the user
+
+  }
+
+  ```
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true
+
+  }
+
+  ```
+
+### Create a new token for an already existing user: users.loginUser POST /users/login (201 Created)
+
+- To perform this action a body with the following schema is required:
+
+  ```jsonc
+
+  {
+
+    "email": "string", //Should be a valid user email
+
+    "pass": "string", //Should be the correct user password
+
+    "captcha": "string" //Should be a valid hcaptcha token
+
+  }
+
+  ```
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "token": "string"
+
+  }
+
+  ```
+
+### Identify the current user: users.identifyCurrentUser GET /users/@me (200 OK)
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "user": {
+
+      "id": "string",
+
+      "createdAt": "number",
+
+      "scopes": "string[]",
+
+      "email": "string",
+
+      "name": "string",
+
+      "verified": "boolean"
+
+    }
+
+  }
+
+  ```
+
+### Modify the current user: users.modifyCurrentUser PATCH /users/@me (200 OK)
+
+- To perform this action send a body following this schema
+
+  ```jsonc
+
+  {
+
+    "email"?:"string",//Should be a valid new email that is neither already used or the current user's email.
+
+    "name"?: "string",//Should not be equal to the user's current name
+
+    "pass"?: "string",//Should not be equal to the user's current password,
+
+    "originalPassword": "string",//Should be the user's current password to validate their identity.
+
+    "captcha": "string"//Should be a valid hcaptcha response token.
+
+  }
+
+  ```
+
+  **email,name,pass are all optional properties, but at least one of them should be passed**
+
+  - If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "verified": "boolean",
+
+    "updated": "(email|name|pass)[]"
+
+  }
+
+  ```
+
+### Begin a deletion sequence for the current user: users.beginDeletionSequence DELETE /users/@me (100 Continue)
+
+- To perform this action the user should not have started a deletion sequence.
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true
+
+  }
+
+  ```
+
+### Finish a deletion sequence for the current user: users.finishDeletionSequence POST /@me/delete
+
+- To perform this action the user should have already started a deletion sequence and send a body following this schema
+
+  ```jsonc
+
+  {
+
+    "deleteCode": "string" //Should be the deletion code received by email
+
+  }
+
+  ```
+
+- If the action is successful a response following this schema should be received.
+
+  ```jsonc
+
+  {
+
+    "status": true
+
+  }
+
+  ``` 
+
+  
+  
