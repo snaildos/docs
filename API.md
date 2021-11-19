@@ -2,7 +2,7 @@
 title: Official API for SnailDOS
 description: Full API regarding SnailDOS
 published: true
-date: 2021-08-29T15:06:29.450Z
+date: 2021-11-19T01:42:57.375Z
 tags: development
 editor: markdown
 dateCreated: 2021-08-28T14:45:09.110Z
@@ -211,10 +211,24 @@ The server could respond with the following errors if the validation of the `aut
 
 - ## Radio is a simple API that provides what currently is playing
 
-### Get currently playing: radio.getCurrent GET /radio/create (200 OK)
+### Get currently playing: radio.getCurrent GET /radio (200 OK)
 
 - _This endpoint allows you to access public information of what the radio is currently playing_
 
+  ```jsonc
+
+  {
+
+    "status": true,
+
+    "playing": "string | null"
+
+  }
+
+  ```
+  - ## StreamBop is the authenticated version of radio
+  ### Get currently playing: streambop.getCurrent GET /streambop
+- _Again using authentication in the headers it will show what the radio is playing with a lower ratelimit_
   ```jsonc
 
   {
