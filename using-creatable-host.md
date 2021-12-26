@@ -2,7 +2,7 @@
 title: How to use Creatable Host?
 description: This guide teaches you everything...
 published: true
-date: 2021-12-23T06:48:16.840Z
+date: 2021-12-26T08:23:31.446Z
 tags: software, creatable-host, tutorial
 editor: markdown
 dateCreated: 2021-12-23T06:48:16.840Z
@@ -44,9 +44,7 @@ You can buy creatable coins, join our discord and ask how.
 
 You can also mine creatable coins by convering your PC processing power to mine Creatable coins.
 If you want to mine Creatable coins, download the miner app, it works on linux, mac (m1), and Windows 7,8,8.1,10,11.
-Download this app from [here](https://github.com/snaildos/SnailMiner/releases/tag/v1.0.0)
-Run the .exe, .appimage, or whatever suits your OS, also ensure you are mining for CPU/GPU, whatever you want the mine. 
-We HIGHLY recommend GPU.
+[Follow this guide on how to get you going!](/en/snailminer)
 
 I mined for ~1 week now and I am happy with my progress, how can I cash out?
 Join our discord, and DM our modmail, follow the instructions there.
