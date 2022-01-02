@@ -2,7 +2,7 @@
 title: Official API for SnailDOS
 description: Full API regarding SnailDOS
 published: true
-date: 2021-11-19T01:42:57.375Z
+date: 2022-01-02T10:22:28.833Z
 tags: development
 editor: markdown
 dateCreated: 2021-08-28T14:45:09.110Z
@@ -221,7 +221,9 @@ The server could respond with the following errors if the validation of the `aut
 
     "status": true,
 
-    "playing": "string | null"
+    "playing": "string | null",
+    
+    "url": "youtubeurlforlivestream"
 
   }
 
@@ -235,7 +237,9 @@ The server could respond with the following errors if the validation of the `aut
 
     "status": true,
 
-    "playing": "string | null"
+    "playing": "string | null",
+    
+    "url": "youtubeurlforlivestream"
 
   }
 
