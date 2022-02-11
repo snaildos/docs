@@ -31,7 +31,7 @@ When you have joined the server, you will want to create a Creatable account.
 - Using the Software for PC: Press the Creatable button in the menu.
 
 When you are in the interface
-![zbtghq.png](/zbtghq.png)
+![zbtghq.png](./images/zbtghq.png)
 Press the "Register for membership button"
 Follow all the instructions to signup, then press register.
 Once done, follow all the yellow prompts to verify your email and link your discord.
