@@ -2,7 +2,7 @@
 title: EncryptOS powered by SnailDOS
 description: Official documentation regarding the EncryptOS operating system.
 published: true
-date: 2022-06-07T02:30:11.643Z
+date: 2022-06-07T02:38:43.002Z
 tags: 
 editor: ckeditor
 dateCreated: 2022-06-07T02:30:11.643Z
@@ -38,3 +38,26 @@ dateCreated: 2022-06-07T02:30:11.643Z
   <li>Custom ArchLinux mirror</li>
 </ul>
 <h1>Development</h1>
+<h2>Running a development environment is not recommended for beginners. (You can also use this to compile the OS)</h2>
+<p>&nbsp;</p>
+<h2>PKGBUILD</h2>
+<pre><code class="language-plaintext">git clone https://github.com/Encrypt-OS/PKGBUILDS
+cd PKGBUILDS
+sudo su
+sh automate-package-build.sh
+# Proceed to wait and interact with the script</code></pre>
+<h2>Mirror</h2>
+<pre><code class="language-plaintext">git clone https://github.com/Encrypt-OS/repo
+cd PKGbUILDS
+sudo su
+sh automate-package-inject-mirror.sh</code></pre>
+<p>Host the mirror on a webserver to host the environment.</p>
+<p>&nbsp;</p>
+<h2>Compile the ISO for the OS</h2>
+<pre><code class="language-plaintext">git clone https://github.com/Encrypt-OS/EncryptOS-ISO.git
+cd EncryptOS-ISO
+sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed
+sudo ./fix_permissions.sh
+sudo ./mkarchiso -v "."</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
