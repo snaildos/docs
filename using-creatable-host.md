@@ -2,7 +2,7 @@
 title: How to use Creatable Host?
 description: This guide teaches you everything...
 published: true
-date: 2021-12-26T08:23:31.446Z
+date: 2022-06-30T06:59:37.770Z
 tags: software, creatable-host, tutorial
 editor: markdown
 dateCreated: 2021-12-23T06:48:16.840Z
@@ -20,7 +20,7 @@ First, let's understand some basic terminology.
 Now we understand basic Creatable terminology, Let's get started by creating our first server.
 You can create a server with our website but we highly recommend our software.
 Currently, our support for software will not work on any apple devices.
-[SnailPortal App (PC)](https://idkyet.com)
+[SnailPortal App (PC)](https://github.com/snaildos/SnailDOS-Desktop/releases/)
 [SnailDOS App (Phone)](https://idkyet.com)
 ## Creating a server
 When you want to create your first server, you **need** to join our discord, this is the one requirment of using Creatable host, leaving the discord will result in your server getting suspended.
@@ -43,7 +43,7 @@ It's tons of things you need to do for this, and we recommend you ask for suppor
 You can buy creatable coins, join our discord and ask how.
 
 You can also mine creatable coins by convering your PC processing power to mine Creatable coins.
-If you want to mine Creatable coins, download the miner app, it works on linux, mac (m1), and Windows 7,8,8.1,10,11.
+If you want to mine Creatable coins, download the miner app, it works on linux, mac (m1), and Windows 10 and 11.
 [Follow this guide on how to get you going!](/en/snailminer)
 
 I mined for ~1 week now and I am happy with my progress, how can I cash out?
