@@ -465,3 +465,9 @@ The server could respond with the following errors if the validation of the `aut
 
   
   
+
+# Using the hCaptcha functionality
+We use hCaptcha for our captcha system.
+```a04b537a-17d4-4a34-9092-ca0583ce459e```
+You will need our site key above to interact with our API and return a completed captcha response.
+Please refer to https://docs.hcaptcha.com/ to add our captcha into your site and interact with our API.
