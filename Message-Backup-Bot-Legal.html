@@ -2,7 +2,7 @@
 title: Message Backup Bot Legal
 description: Legal page for the Message Backup Bot
 published: true
-date: 2022-09-02T13:15:56.285Z
+date: 2022-09-02T13:24:08.324Z
 tags: 
 editor: ckeditor
 dateCreated: 2022-02-23T02:36:42.030Z
@@ -43,5 +43,6 @@ dateCreated: 2022-02-23T02:36:42.030Z
 </ol>
 <p>You have the rights to delete user data with the command <code>/user delete</code>.</p>
 <h1>Privacy Of Stored Contents</h1>
-<p>Message content is hashed with the encryption key given to the user first time on initial registration will be provided inside their direct messages so they can decrypt their data. We cannot decrypt users data, only the user can do so.</p>
+<p>Message content is hashed with the encryption key given to the user first time on initial registration will be provided inside their direct messages so they can decrypt their data.&nbsp;</p>
+<p>When it comes to user privacy and message content the following techniques are used: - The SHA512 Hashing algorithm is used to store the user ID. Therefore it impossible to assign which data is owned using a reversed approach (Reading from database and extracting information) - A RSA key pair with a modulus of 4096 and a passphrase of length 128 bytes used to encrypt the private key of the user using aes-256-cbc - Each backup is encrypted using a passphrase of 256 bytes to encrypt a stringified JSON object containing information such as messages, channel information etc - The backup passphrase is encrypted using the user's public key.</p>
 <p>&nbsp;</p>
