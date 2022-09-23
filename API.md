@@ -31,7 +31,7 @@ All responses follow a certain template that reports if the requested action was
 
 If an action is successful it follows this template under two conditions.
 
-- If the requested action fetches a certain document from the database it returns the all the data that is accessible based on the user privileges
+- If the requested action fetches a certain document from the database it returns all the data that is accessible based on the user privileges
 
   - For example, fetching a user:
 
@@ -51,7 +51,7 @@ If an action is successful it follows this template under two conditions.
 
   /!\ This has a single exception which is the "fetch currently playing" endpoint. (Refer to the proper section of the documentation for more)
 
-- If the requested action modifies, deletes, to posts a certain document from the database For example, register user) it returns data that has been modified by consequence of the requested action or if the content was created it returns important data to access the newly created data
+- If the requested action modifies, deletes, to posts a certain document from the database (for example, register user) it returns data that has been modified a consequence of the requested action or if the content was created it returns important data to access the newly created data
 
 - For example, registering a new user:
 
@@ -74,7 +74,7 @@ If an action has failed it follows this template under all conditions.
 }
 ```
 
-Failed actions provide an appropriate status code to what went wrong.
+Failed actions provide an appropriate status code for what went wrong.
 
 Some parts of the documentation may include status codes explaining the issues related to what went wrong
 
@@ -91,7 +91,7 @@ Some parts of the documentation may include status codes explaining the issues r
   }
   ```
 
-  - This response signifies that the client has sent too much requests in a short sequence of time.
+  - This response signifies that the client has sent too many requests in a short sequence of time.
 
   ```jsonc
   {
@@ -114,7 +114,7 @@ Some parts of the documentation may include status codes explaining the issues r
   }
   ```
 
-  - This response signifies that the client has took too long to deliver the body of the given request.
+  - This response signifies that the client has taken too long to deliver the body of the given request.
 
 - **415**: Unsupported media type
 
@@ -213,7 +213,7 @@ The server could respond with the following errors if the validation of the `aut
 
 ### Get currently playing: radio.getCurrent GET /radio (200 OK)
 
-- _This endpoint allows you to access public information of what the radio is currently playing_
+- _This endpoint allows you to access public information about what the radio is currently playing_
 
   ```jsonc
 
@@ -253,7 +253,7 @@ The server could respond with the following errors if the validation of the `aut
 
 # Users
 
-- ## Users endpoints are the main feature of snail portal, it allows creating new users, updating them and / or deleting them.
+- ## Users endpoints are the main feature of snail portal, it allows for creating new users, updating them and/or deleting them.
 
 ### Create a new user: users.createUser POST /users/create (201 Created)
 
@@ -291,7 +291,7 @@ The server could respond with the following errors if the validation of the `aut
 
   ```
 
-  - This is the first step to creating a new user, the returned token should be used to validate user with the code received by email
+  - This is the first step to creating a new user, the returned token should be used to validate the user with the code received by email
 
 ### Validate the new created user: users.validateUser POST /users/validate (200 OK)
 
@@ -439,7 +439,7 @@ The server could respond with the following errors if the validation of the `aut
 
 ### Finish a deletion sequence for the current user: users.finishDeletionSequence POST /@me/delete
 
-- To perform this action the user should have already started a deletion sequence and send a body following this schema
+- To perform this action the user should have already started a deletion sequence and sent a body following this schema
 
   ```jsonc
 
