@@ -24,7 +24,7 @@ Currently, our support for software will not work on any apple devices.
 [SnailDOS App (Phone)](https://idkyet.com)
 ## Creating a server
 When you want to create your first server, you **need** to join our discord, this is the one requirment of using Creatable host, leaving the discord will result in your server getting suspended.
-[Join Our Discord](https://invite.gg/snaildos)
+[Join Our Discord](https://dsc.gg/snaildos)
 When you have joined the server, you will want to create a Creatable account.
 - [Using the website](https://server.snaildos.com)
 - Using the SnailDOS mobile app: Press the creatable app.
